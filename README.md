@@ -12,7 +12,7 @@
 ![JavaScript]("./img/javascript.png" width="100")
 ![TypeScript]("./img/typescript.png" width="100")
 ![Git]("./img/git.png" width="100")
-![GitHub]("./img/github.png")
+![GitHub]("img/github.png")
 ![Angular]("./img/angular.png" | width="100")
 ![Firebase]("./img/firebase.png" | width="100")
 
