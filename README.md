@@ -6,15 +6,15 @@
 - :computer: Tenho conhecimentos para o desenvolvimento de Front End para aplicações, mas conhecimento nunca é o suficiente, a cada dia busco me superar e fazer melhor do que fiz ontem.
 
 ## HABILIDADES
-![HTML5](./img/html.png)
-![CSS3](./img/css.png)
-![SASS](img/sass.png)
-![JavaScript](img/javascript.png)
-![TypeScript](img/typescript.png)
-![Git](img/git.png)
-![GitHub](img/github.png)
-![Angular](img/angular.png)
-![Firebase](img/firebase.png)
+- HTML5
+- CSS3
+- SASS
+- JavaScript
+- TypeScript
+- Git
+- GitHub
+- Angular
+- Firebase
 
 # PORTFÓLIO
 
