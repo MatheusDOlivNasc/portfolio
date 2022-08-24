@@ -1,0 +1,315 @@
+@import './_presets';
+
+body {
+  &.no-js {
+    nav {
+      display: none;
+    }
+  }
+}
+
+header, section, footer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  
+  .background {
+    min-height: 100vh;
+    width: 95%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+    h2 {
+      margin: 5px 0;
+      @include type(regular, $title);
+      font-size: 30pt;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    i {
+      position: absolute;
+      top: -255px;
+      background: rgba($color: #ffffff, $alpha: 0.5);
+      animation-name: moveObj;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      z-index: 0;
+    }
+  }
+}
+
+@keyframes moveObj {
+  0% {
+    transform: translateY(0)
+  }
+  100% {
+    transform: translateY(200vh)
+  }
+}
+
+header {
+  background-color: black;
+  div {
+    h1, p {
+      padding: 0 5px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 28pt;
+      color: $secondary;
+      @include type(bold, $title);
+    }
+    p {
+      font-size: 16pt;
+      color: white;
+      @include type(bold);
+    }
+  }
+}
+
+#about {
+  div {
+    p {
+      @include type(regular);
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#skills {
+  background-color: $primary;
+  div {
+    h2 {
+      color: white;
+    }
+    ul {
+      margin: 5px 0;
+      li {
+        display: inline-block;
+        vertical-align: top;
+        list-style: none;
+        width: 24.5%;
+        height: auto;
+        background-color: white;
+        padding: 10px;
+        margin: 2px 0;
+        border-radius: 10px;
+        .image {
+          padding: 5px;
+          height: 200px;
+          text-align: center;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+          
+        }
+        p {
+          width: 100%;
+        }
+        &.link {
+          cursor: pointer;
+          @include transition();
+          a {
+            height: 100%;
+          }
+          &:hover {
+            background-color: $light-gray;
+          }
+        }
+        @media screen and (max-width: $tablet) {
+          width: 32.5%;
+        }
+        @media screen and (max-width: $phone) {
+          width: 49.2%;
+        }
+      }
+    }
+  }
+}
+
+#projects {
+  div {
+    ul {
+      li {
+        width: 33.0%;
+        margin: 0 0 10px 0;
+        list-style: none;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .proj {
+        color: white;
+        .image {
+          padding: 10px 10px 5px 10px;
+          background-color: $primary;
+          border-radius: 10px 10px 0 0;
+          height: 250px;
+          text-align: center;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+          }
+        }
+        .info {
+          background-color: $primary;
+          padding: 5px 10px 10px 10px;
+          border-radius: 0 0 10px 10px;
+          h3 {
+            padding-bottom: 5px;
+          }
+        }
+        .soon {
+          background-color: $primary;
+          padding: 10px;
+          border-radius: 10px;
+        }
+        .warn {
+          background-color: $primary;
+          border-radius: 10px;
+          padding: 5px;
+          margin: 5px 0;
+          display: flex;
+          cursor: pointer;
+          @include transition();
+          a {
+            flex: 1;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 auto;
+          }
+          &:hover {
+            background-color: $secondary;
+          }
+        }
+        @media screen and (max-width: $tablet) {
+          width: 49.2%;
+        }
+        @media screen and (max-width: $phone) {
+          width: 100%;
+          .soon {
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  div {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+}
+
+nav {
+  position: fixed;
+  bottom: 15px;/* 
+  right: 15px; */
+  z-index: 99999;
+  text-align: right;
+  ul {
+    @include transition();
+    
+    li {
+      list-style: none;
+      padding: 5px 0;
+      margin: 10px 0 0 0;
+      text-align: right;
+      a {
+        padding: 5px 10px;
+        margin: 10px 0 0 0;
+        background-color: white;
+        flex: 1;
+        color: black;
+        text-decoration: none;
+        font-size: 11pt;
+        @include type(extrabold);
+        border: 2px solid transparent;
+        box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
+        border-radius: 5px 5px 0px 5px;
+        text-align: right;
+        cursor: pointer;
+        @include transition();
+        &:hover {
+          background-color: $light-gray;
+          border: 2px solid $secondary;
+          box-shadow: 0 0 0px 0px rgba(0,0,0,0.2);
+        }
+        &.active {
+          border: 2px solid white;
+          background-color: $primary;
+          color: white;
+          &:hover {
+            border-bottom: 2px solid $primary;
+          }
+        }
+      }     
+    }
+  }
+  .menu {
+    background-color: $primary;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    border: 0;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
+    @include transition();
+    &:hover {
+      box-shadow: 0 0 0px 2px rgba(0,0,0,0.2);
+    }
+    .line {
+      width: 60%;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      @include transition();
+      &.two {
+        margin: 5px 0;
+      }
+    }
+    &.close {
+      
+      .line {
+        &.one {
+          transform: rotate(45deg);
+        }
+        &.two {
+          opacity: 0;
+        }
+        &.three {
+          margin-top: -16px;
+          transform: rotate(135deg);
+        }
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
